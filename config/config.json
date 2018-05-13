@@ -1,0 +1,11 @@
+{
+  "secret":"jadfg*YIJHJ@$RvgvBNVhgvbVNGhj",
+  "mailer": {
+    "service": "gmail",
+    "auth": {
+      "user": "bcommapp@gmail.com",
+      "pass": "bcom2017"
+    }
+  },
+  "host":"bcon.eu-2.evennode.com"
+}

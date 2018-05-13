@@ -1,0 +1,49 @@
+<!Doctype html>
+<html>
+<head>
+  <title>Admin</title>
+
+  <!-- Material Design fonts -->
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: rgba(232, 232, 232, 0.71);">
+<div class="container">
+
+  <div class="text-center">
+    <h1><span class="fa fa-lock"></span> Posts</h1>
+
+    <div class="list-group">
+      <% posts.map(post=>{%>
+      <div class="list-group-item">
+        <div class="row-action-primary">
+          <i class="material-icons"><%=post.title%></i>
+        </div>
+        <div class="row-content" id="<%=post._id%>">
+          <div class="least-content"><%=post.createdAt%></div>
+          <div class="least-content"><%=post.status%></div>
+          <h4 class="list-group-item-heading">By: <%=post.owner.email%></h4>
+
+          <p class="list-group-item-text"><%=post.body%></p>
+          <a class="show-more" href="#">Show more</a><br>
+          <a class="accept" href="/admin/<%=post._id%>/accept">Accept</a> <a class="decline" href="/admin/<%=post._id%>/decline">Decline</a>
+        </div>
+      </div>
+      <div class="list-group-separator"></div>
+      <%}) %>
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>
